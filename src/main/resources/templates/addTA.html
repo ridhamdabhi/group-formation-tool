@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>List TAs</title>
+    <meta charset="UTF-8" content="text/html" http-equiv="Content-type"/>
+    <link crossorigin="anonymous" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
+          integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" rel="stylesheet"/>
+    <script src="scripts/searchTA.js"></script>
+</head>
+<body>
+<input id="searchInput" onkeyup="myFunction()" placeholder="Search BannerID" type="text">
+<table class="table table-striped table-bordered table-sm" id="TAListTable">
+    <thead>
+    <tr>
+        <th class="th-sm">BannerID</th>
+        <th class="th-sm">First Name</th>
+        <th class="th-sm">Last Name</th>
+        <th class="th-sm">Email</th>
+        <th class="th-sm">Actions</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr th:each="user : ${users}">
+        <td th:text="${user.getId()}"></td>
+        <td th:text="${user.getFirstName()}"></td>
+        <td th:text="${user.getLastName()}"></td>
+        <td th:text="${user.getEmail()}"></td>
+        <td><a th:href="@{'/confirm-add-ta?courseid=' + ${courseid} + '&bannerid=' + ${user.getId()}}">Add</a></td>
+    </tr>
+    </tbody>
+</table>
+</body>
+</html>

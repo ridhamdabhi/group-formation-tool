@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+
+    <title>Login Page</title>
+    <link rel="stylesheet" th:href="@{/css/style.css}"/>
+</head>
+
+<body style="background-color:#ededed;">
+<div style="background-color:#337ab7; height:50px; text-align: center; color: black;">
+    <h2>Group Formation Tool</h2>
+</div>
+<div id="loginStyles">
+    <div class="loginBox">
+        <h2>Login Page </h2>
+        <form method="POST" style="text-align:center" th:action="@{/login}">
+            <input id="username" name="username" required style="font-size: large;" th:placeholder="BannerID"
+                   type="text"/>
+            <br/>
+            <input id="password" name="password" required style="font-size: large;" th:placeholder="Password"
+                   type="password"/>
+            <br/>
+            <input id="submit" type="submit" value="Log in"/>
+            <br/>
+        </form>
+        <h5><a href="/forgotpassword">Forgot password?</a></h5>
+        <form>
+            <h5 style="text-align: center;">
+                <a href="/register">New User? Sign up here</a>
+            </h5>
+        </form>
+    </div>
+</div>
+
+</body>
+
+</html>

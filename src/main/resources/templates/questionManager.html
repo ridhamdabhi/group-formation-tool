@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+
+    <title>front page</title>
+    <meta ; charset="UTF-8" content="text/html" http-equiv="Content-type"/>
+
+</head>
+
+<body>
+<div style="background-color:#337ab7; height:50px; color: black;">
+    <h2 style="float: left;">Group Formation Tool</h2>
+    <a href="/logout" style="float: right; color: black;">Logout</a>
+</div>
+
+<br/>
+<div>
+    <ul>
+        <li>
+            <a href="/create-question" style="float: left;">Create a Question</a>
+        </li>
+
+        <li><a href="/sortQuestion" style="float: left">Sort the questions</a>
+        </li>
+
+        <li><a href="/listDeleteQuestions" style="float: left">Delete the question</a></li>
+    </ul>
+</div>
+<div th:if="${message}" th:text="${message}"></div>
+</body>
+
+</html>
